@@ -10,10 +10,22 @@ export default class AddPlayer extends Component {
 
     state = {name:''}
 
+    namelenerror = () => {
+        alert("something went wrong, check that the name you typed is at least 3 characters long")
+
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addPlayer(this.state.name)
-      }    
+        if(this.state.name.length > 2){
+            this.props.addPlayer(this.state.name)
+            this.setState({
+                name: ''
+            })
+        } else {
+            this.namelenerror()
+        }
+    }    
 
     handleChange = (event) => {
         this.setState({

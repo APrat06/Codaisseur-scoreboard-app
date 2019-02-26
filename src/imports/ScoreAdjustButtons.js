@@ -10,7 +10,10 @@ export default class PlusButton extends Component {
 
   render() {
     return (
-      <button className="plus-button" onClick={this.props.onClick}>+</button>
+      <div>
+        <button className="plus-button" onClick={this.props.onMinus}>-</button>
+        <button className="plus-button" onClick={this.props.onPlus}>+</button>
+      </div>
     )
   }
 }

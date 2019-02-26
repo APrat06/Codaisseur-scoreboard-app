@@ -49,6 +49,7 @@ export default class Scoreboard extends Component {
       score={player.score}
       key={player.id}
       updatePlayerScore={this.updatePlayerScore}
+      removePlayer={this.removePlayer}
     />
   }
 
@@ -61,6 +62,17 @@ export default class Scoreboard extends Component {
     this.setState({
       players: this.state.players.concat(player)
     })
+  }
+
+  removePlayer = (playerId) => {
+
+   this.setState({
+     players: this.state.players.filter(
+       char => char.id !== playerId
+     )
+   })
+
+    console.log("am I called?", playerId)
   }
 
   render() {
