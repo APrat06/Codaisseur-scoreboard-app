@@ -5,7 +5,8 @@ import './PlusButton.css'
 export default class PlusButton extends Component {
 
   static propTypes = {
-    onClick: PropTypes.func.isRequired
+    onMinus: PropTypes.func.isRequired,
+    onPlus: PropTypes.func.isRequired
   }
 
   render() {
